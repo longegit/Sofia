@@ -1,0 +1,27 @@
+ext {
+    plugins = [
+            library    : 'com.android.library',
+            application: 'com.android.application',
+            maven      : 'com.github.dcendents.android-maven',
+    ]
+
+    android = [
+            applicationId    : "com.yanzhenjie.sofia.sample",
+            compileSdkVersion: 28,
+            buildToolsVersion: "27.0.3",
+
+            minSdkVersion    : 14,
+            targetSdkVersion : 28,
+
+            versionCode      : 5,
+            versionName      : "1.0.5",
+    ]
+
+    dependencies = [
+            design      : 'com.android.support:design:27.1.0',
+            appCompat   : 'com.android.support:appcompat-v7:27.1.0',
+            recyclerView: 'com.android.support:recyclerview-v7:27.1.0',
+
+            sofia       : 'com.yanzhenjie:sofia:1.0.5'
+    ]
+}
