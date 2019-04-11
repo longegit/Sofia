@@ -72,7 +72,9 @@ class HostLayout extends RelativeLayout implements Bar {
                 layoutParams.bottomMargin = 0;
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                mNavigationView.setCutoutHeight(insets.getDisplayCutout().getSafeInsetTop() - insets.getDisplayCutout().getSafeInsetBottom());
+                if (insets.getDisplayCutout() != null) {
+                    mNavigationView.setCutoutHeight(insets.getDisplayCutout().getSafeInsetTop() - insets.getDisplayCutout().getSafeInsetBottom());
+                }
             }
             return super.onApplyWindowInsets(insets.replaceSystemWindowInsets(0, 0, 0, 0));
         } else {
