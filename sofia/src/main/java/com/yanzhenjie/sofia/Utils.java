@@ -95,6 +95,14 @@ public class Utils {
         }
     }
 
+    public static void fitShortEdges(Activity activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            activity.getWindow().setAttributes(lp);
+        }
+    }
+
     private static boolean setMeizuStatusBarFont(Activity activity, boolean darkFont) {
         try {
             WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
